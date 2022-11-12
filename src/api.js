@@ -1,7 +1,7 @@
 import * as appwrite from 'appwrite';
 
 const client = new appwrite.Client()
-    .setEndpoint('https://cultivating.netlify.app')
+    .setEndpoint('https://cultivating.netlify.app/')
     .setProject('636fa7e2930cbd636db3');
 
 const api = {

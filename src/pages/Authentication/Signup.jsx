@@ -6,8 +6,9 @@ const SignUp = () => {
     const handleSignup = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target)
-        console.log(formData.get('email'))
+        console.log(formData.get('name'))
         await api.signup(formData.get('email'), formData.get('password'), formData.get('name'))
+        
     }
 
     return (
