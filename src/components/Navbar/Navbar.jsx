@@ -4,7 +4,7 @@ import { RiPlantFill } from 'react-icons/ri'
 const Navbar = () => {
     return (
         <div className="Navbar">
-            <Link key="Home" to="/">
+            <Link key="Landing" to="/">
                 <div className="logo">
                     <RiPlantFill size="2em" />
                     <span>cultivate</span>
