@@ -1,30 +1,36 @@
 import * as appwrite from 'appwrite';
 
 const client = new appwrite.Client()
-    .setEndpoint('127.0.0.1')
+    .setEndpoint('192.168.86.250')
     .setProject('636fa7e2930cbd636db3');
 
 const api = {
     async signup(email, password, name) {
         const account = new appwrite.Account(client)
 
-        account.create(
+        return account.create(
             appwrite.ID.unique(),
             email,
             password,
             name
-        ).then(console.log).catch(console.error);
+        ).then().catch(console.error);
 
     },
 
     async login(email, password) {
         const account = new appwrite.Account(client)
 
-        account.createEmailSession(
+        return account.createEmailSession(
             email,
             password
-        ).then(console.log).catch(console.error)
-    }
+        ).then().catch(console.error)
+    },
+
+    async getJWT() {
+        const account = new appwrite.Account(client)
+
+        return account.createJWT().then().catch(console.error) // no clue if this works lol
+    } // should i run it or anything
 }
 
 export default api;
