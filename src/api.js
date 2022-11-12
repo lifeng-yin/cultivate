@@ -1,12 +1,14 @@
 import * as appwrite from 'appwrite';
 
 const client = new appwrite.Client()
-    .setEndpoint('https://cultivating.netlify.app/')
-    .setProject('636fa7e2930cbd636db3');
 
 const api = {
     async signup(email, password, name) {
         const account = new appwrite.Account(client)
+
+        client
+            .setEndpoint('https://cultivating.netlify.app/')
+            .setProject('636fa7e2930cbd636db3');
 
         return account.create(
             appwrite.ID.unique(),
