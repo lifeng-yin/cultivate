@@ -1,14 +1,17 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import api from '../../api';
 import './Authentication.scss'
+import TokenContext from "./tokenContext"
 
 const SignUp = () => {
+    const tokenCtx = useContext(TokenContext)
     const handleSignup = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target)
         console.log(formData.get('name'))
         await api.signup(formData.get('email'), formData.get('password'), formData.get('name'))
-        
+        await api.getJWT(tokenCtx.changeToken)
+        console.log(tokenCtx)
     }
 
     return (

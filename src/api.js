@@ -28,10 +28,13 @@ const api = {
         ).then().catch(console.error)
     },
 
-    async getJWT() {
+    async getJWT(changeToken) {
         const account = new appwrite.Account(client)
 
-        return account.createJWT().then().catch(console.error) // no clue if this works lol
+        let token = await account.createJWT().then().catch(console.error) // no clue if this works lol
+        changeToken(token)
+
+        return token
     } // should i run it or anything
 }
 

@@ -3,13 +3,13 @@ import './Navbar.scss'
 import { RiPlantFill } from 'react-icons/ri'
 const Navbar = () => {
     return (
-        <div className="Navbar">
-            <Link key="Landing" to="/">
-                <div className="logo">
+        <div className="Navbar">    
+            <div className="logo">
+                <Link key="Landing" to="/">
                     <RiPlantFill size="2em" />
                     <span>cultivate</span>
-                </div>
-            </Link>
+                </Link>
+            </div> 
             
             <div>
                 <Link key="Plant" to="/Plant">Plant</Link>
