@@ -1,19 +1,23 @@
 import { Link } from 'react-router-dom';
 import './Navbar.scss'
-
-const pages = [
-    { name: 'Home', path: '/' },
-    { name: 'Plant', path: '/plant' },
-    { name: 'Harvest', path: '/harvest' },
-]
+import { RiPlantFill } from 'react-icons/ri'
 const Navbar = () => {
     return (
         <div className="Navbar">
-            {pages.map(page => (
-                <div>
-                    <Link key={page.name} to={page.path}>{page.name}</Link>
+            <Link key="Home" to="/">
+                <div className="logo">
+                    <RiPlantFill size="2em" />
+                    <span>cultivate</span>
                 </div>
-            ))}
+            </Link>
+            
+            <div>
+                <Link key="Plant" to="/Plant">Plant</Link>
+            </div>
+
+            <div>
+                <Link key="Harvest" to="/Harvest">Harvest</Link>
+            </div>
         </div>
     )
 }

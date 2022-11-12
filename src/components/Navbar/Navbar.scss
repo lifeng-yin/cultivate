@@ -4,20 +4,37 @@
     justify-content: left;
     align-items: stretch;
 
-    a {
-        color: black;
-        text-decoration: none;
-    }
 
-    div:first-child {
-        margin-left: 50px;
-    }
 
     div {
         padding: 20px 20px 20px 20px;
+
+        display: flex;
+        align-items: center;
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
     }
 
     div:hover {
         background-color: whitesmoke;
     }
+
+    a {
+        text-decoration: none;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+
 }
