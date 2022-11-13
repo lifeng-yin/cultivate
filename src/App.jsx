@@ -15,12 +15,16 @@ import FormSubmitted from './pages/FormSubmitted/FormSubmitted.jsx'
 function App() {
   const [token, changeToken] = useState(null)
   const tokenCtx = useContext(TokenContext)
-  const [posts, changePosts] = useState([])
+  const [posts, changePosts] = useState([
+    {title: "Carrots", price: "10", description: "Yummy carrots", pesticides: false, vegan: true, contact: "monkeys.inthe@jungle.com"},
+    {title: "Jams and such", price: "5", description: "Assortment of jams and dressings", pesticides: false, vegan: true, contact: null},
+    {title: "Goat cheese", price: "25", description: "Cheese made from fresh goat milk", pesticides: false, vegan: true, contact: "hello.clockhacks@gmail.com"}
+  ])
 
   return (
     <>
     <TokenContext.Provider value={{token, changeToken}}>
-      <PostsContext.Provider value={{posts, changePosts, addPost: post => changePosts([...posts, post])}}>
+      <PostsContext.Provider value={{posts, changePosts, addPost: post => changePosts([post, ...posts])}}>
       <BrowserRouter>
         <Navbar />
         <Routes>

@@ -1,7 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Navbar.scss'
 import { RiPlantFill } from 'react-icons/ri'
 const Navbar = () => {
+    const activeStyle = {
+        'text-decoration': 'underline',
+        'text-decoration-color': 'darkgreen',
+        'text-decoration-thickness': '2px',
+        'font-weight': 'bold'
+    }
+
     return (
         <div className="Navbar">    
             <div className="logo">
@@ -12,11 +19,15 @@ const Navbar = () => {
             </div> 
             
             <div>
-                <Link key="Plant" to="/Plant">Plant</Link>
+                <NavLink key="Plant" to="/Plant" style={({ isActive }) => (
+                    isActive ? activeStyle : undefined
+                )}>Plant</NavLink>
             </div>
 
             <div>
-                <Link key="Harvest" to="/Harvest">Harvest</Link>
+                <NavLink key="Harvest" to="/Harvest" style={({ isActive }) => (
+                    isActive ? activeStyle : undefined
+                )}>Harvest</NavLink>
             </div>
 
             <div id='login'>

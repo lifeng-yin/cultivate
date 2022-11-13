@@ -1,0 +1,95 @@
+.Harvest {
+    padding: 50px;
+.post {
+    border-radius: 15px;
+    box-shadow: 1px 1px 10px 2px rgba(175, 175, 175, 50%);
+    padding: 2% 5%;
+    margin: 2vh 20vw;
+    li {
+        margin: 1%;
+    }
+}
+
+button {
+    background-color: darkgreen;
+    border: 0;
+    padding: 5px 15px;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    display: block;
+    cursor: pointer;
+
+    &:hover {
+        background-color: green;
+    }
+    &.off {
+        cursor: not-allowed;
+    }
+}
+
+h1 {
+    text-align: center;
+    margin: 5px;
+}
+
+#desc {
+    text-align: center;
+}
+
+.x {
+    color: red;
+    position: relative;
+    top: 2px;
+}
+
+.check {
+    color: green;
+    position: relative;
+    top: 2px;
+}
+
+.overlay, .contactInfo{
+&.off {
+    display: none;
+}
+&.on {
+    display: initial;
+}
+
+}
+.contactInfo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 15px;
+    padding: 5%;
+    z-index: 5;
+    .closeButton {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 3%;
+        padding: 5px;
+        svg {
+            display: block;
+        }
+    }
+}
+.overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(60, 60, 60, 0.6);
+    width: 100vw;
+    height: 100vh;
+    z-index: 4;
+}
+
+}

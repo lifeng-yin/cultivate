@@ -14,13 +14,20 @@ const Plant = () => {
         
         e.preventDefault();
         const formData = new FormData(e.target)
+        let contact = formData.get("Contact")
+
+        if (!contact) {
+            contact = 'not specified'
+        }
+
         // api.makepost(formData.get('content'))
         postsCtx.addPost({
             title: formData.get("Title"), 
             price: formData.get("Price"),
             description: formData.get("Description"),
-            pesticides: formData.get("Pesticides Used"),
-            vegan: formData.get("Vegan")
+            pesticides: Boolean(formData.get("Pesticides Used")),
+            vegan: Boolean(formData.get("Vegan")),
+            contact: contact
         })
         
         console.log(postsCtx.posts)
@@ -49,7 +56,10 @@ const Plant = () => {
                     <input className = 'check' name="Vegan" type='checkbox'></input>
                 </div>
 
-                <button type="submit" className="signup-button">Create</button>
+                <h3>Contact Info</h3>
+                <input name="Contact" placeholder = 'my.email@example.com'></input>
+
+                <button type="email" className="signup-button">Create</button>
             </form>
         </div>
     )

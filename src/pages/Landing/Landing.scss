@@ -3,22 +3,65 @@
     height: 93%;
     display: flex;
     justify-content: space-between;
-    
-    .logo {
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        color: darkgreen;
 
-        span {
-            font-size: 20px;
-            font-weight: bold;
+    button {
+        background-color: darkgreen;
+        border: 0;
+        padding: 10px 30px;
+        color: white;
+        font-size: 20px;
+        margin-top: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        display: block;
+        cursor: pointer;
+
+        &:hover {
+            background-color: green;
+        }
+    }
+        
+    div {
+        margin-left: auto;
+        padding-left: 10%;
+        padding-right: 10%;
+        margin-right: auto;
+        display: block;
+        margin-top: 25px;
+        gap: 5px;
+        .logo {
+            color: darkgreen;
+            font-weight: bold;   
+            display: flex;
+            font-size: 30px;
+            align-items: center;     
+            justify-content: center;
+        }
+        .gradient {
+            background: linear-gradient(90deg, rgba(7,134,11,1) 3%, rgba(196,205,42,1) 47%, rgba(42,193,205,1) 91%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-left: 20px;
+            margin-right: 20px; 
+        }          
+
+        #h1wrapper {
+            display: flex;
+            white-space: nowrap;
+            text-align: center;
+            justify-content: center;
+        }
+        h1 {
+            font-size: 80px;   
+            color: #07860b;
+        }
+        h2, h3 {
+            font-weight: normal;
         }
     }   
-
 }
 #bg {
     object-fit: cover;
