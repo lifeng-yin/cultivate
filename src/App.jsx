@@ -9,14 +9,18 @@ import './App.css';
 import SignUp from './pages/Authentication/Signup';
 import Login from './pages/Authentication/Login';
 import TokenContext from "./pages/Authentication/tokenContext";
+import PostsContext from "./pages/Plant/PostsContext";
+import FormSubmitted from './pages/FormSubmitted/FormSubmitted.jsx'
 
 function App() {
   const [token, changeToken] = useState(null)
   const tokenCtx = useContext(TokenContext)
+  const [posts, changePosts] = useState([])
 
   return (
     <>
     <TokenContext.Provider value={{token, changeToken}}>
+      <PostsContext.Provider value={{posts, changePosts, addPost: post => changePosts([...posts, post])}}>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -25,9 +29,11 @@ function App() {
           <Route path="/harvest" element={<Harvest />}></Route>
           <Route path="/signup" element={<SignUp></SignUp>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
+          <Route path='/formsubmitted' element = {<FormSubmitted/>}></Route>
         </Routes>
       </BrowserRouter>
-      </TokenContext.Provider>
+      </PostsContext.Provider>
+    </TokenContext.Provider>
     </>
   );
 }
