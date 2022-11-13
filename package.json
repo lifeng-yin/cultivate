@@ -2,6 +2,7 @@
   "name": "cultivate",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "appwrite": "^10.1.0",
     "react": "^18.2.0",

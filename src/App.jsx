@@ -21,9 +21,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Landing />}></Route>
-          <Route path="/plant" element={
-            tokenCtx.token ? <Plant /> : <Navigate to="/signup" />
-          }></Route>
+          <Route path="/plant" element={<Plant/>}></Route>
           <Route path="/harvest" element={<Harvest />}></Route>
           <Route path="/signup" element={<SignUp></SignUp>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>

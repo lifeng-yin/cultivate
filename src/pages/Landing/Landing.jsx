@@ -14,6 +14,7 @@ const Landing = () => {
             </div>
             <img src = {bg} alt = 'bg' id = 'bg'></img>
         </div>
+
     )
 }
 
