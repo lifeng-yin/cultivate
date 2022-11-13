@@ -18,6 +18,14 @@ const Navbar = () => {
             <div>
                 <Link key="Harvest" to="/Harvest">Harvest</Link>
             </div>
+
+            <div id='login'>
+                <Link key='Log In' to='/login'>Log In</Link>
+            </div>
+            <div id='signup'>
+                <Link key='Sign Up' to='/signup'>Sign Up</Link>
+            </div>
+
         </div>
     )
 }
